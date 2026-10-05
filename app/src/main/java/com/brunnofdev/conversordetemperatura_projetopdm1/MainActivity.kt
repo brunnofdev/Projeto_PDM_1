@@ -17,4 +17,29 @@ class MainActivity : AppCompatActivity() {
             insets
         }
     }
+
+    fun removerVirgula(texto: String): String = texto.replace(",", ".")
+
+    fun converterTemperatura(valor: Double, tipo1: String, tipo2: String): Double {
+        
+        if (tipo1 == tipo2) {
+            return valor
+        }
+        if (tipo1 == "Celsius" && tipo2 == "Fahrenheit") {
+            return (valor * 1.8) + 32
+        } else if (tipo1 == "Celsius" && tipo2 == "Kelvin") {
+            return valor + 273.15
+        } else if (tipo1 == "Fahrenheit" && tipo2 == "Celsius") {
+            return (valor - 32) / 1.8
+        } else if (tipo1 == "Fahrenheit" && tipo2 == "Kelvin") {
+            return (valor - 32) * 5/9 + 273.15
+        } else if (tipo1 == "Kelvin" && tipo2 == "Celsius") {
+            return valor - 273.15
+        } else if (tipo1 == "Kelvin" && tipo2 == "Fahrenheit") {
+            return (valor - 273.15) * 1.8 + 32
+        } else {
+            return 0.0
+        }
+    }
+    
 }
