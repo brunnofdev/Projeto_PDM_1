@@ -6,24 +6,42 @@
     android:id="@+id/main"
     android:background="@color/background">
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="20dp">
 
+        <TextView
+            android:id="@+id/tvTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/conversor_de_temperatura"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"
+            android:background="@color/main"/>
+
         <EditText
             android:id="@+id/edtTemperatura"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Digite a temperatura"
+            android:layout_marginBottom="20dp"
+            android:autofillHints="25"
+            android:hint="@string/digite_a_temperatura"
+            android:textColorHint="@color/black"
             android:inputType="numberDecimal"
-            android:layout_marginBottom="20dp"/>
+            android:textColor="@color/black"
+            android:minHeight="48dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="De:"
+            android:text="@string/de"
             android:textStyle="bold"/>
 
         <RadioGroup
@@ -32,15 +50,15 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginBottom="10dp">
-            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Celsius" android:checked="true"/>
-            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Fahrenheit"/>
-            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Kelvin"/>
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Celsius" android:textColor="@color/black"/>
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Fahrenheit" android:textColor="@color/black"/>
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Kelvin" android:textColor="@color/black"/>
         </RadioGroup>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Para:"
+            android:text="@string/para"
             android:textStyle="bold"/>
 
         <RadioGroup
@@ -49,27 +67,38 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginBottom="20dp">
-            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Celsius"/>
-            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Fahrenheit" android:checked="true"/>
-            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Kelvin"/>
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/black" android:text="@string/celsius"/>
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/black" android:text="@string/fahrenheit"/>
+            <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/black" android:text="@string/kelvin"/>
         </RadioGroup>
 
         <Button
             android:id="@+id/btnConverter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Converter"
-            android:layout_marginBottom="20dp"/>
+            android:text="@string/converter"
+            android:textColor="@color/white"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/main"/>
 
         <TextView
             android:id="@+id/tvResultado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Aguardando valor"
+            android:text="@string/aguardando_valor"
+            android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
             android:gravity="center"
             android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/tvHistorico"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hist_rico"
+            android:background="#EEEEEE"
+            android:padding="10dp"/>
 
     </LinearLayout>
 </ScrollView>

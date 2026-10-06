@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Conversor de Temperatura - Projeto PDM 1</string>
+    <string name="digite_a_temperatura">Digite a temperatura</string>
+    <string name="converter">Converter</string>
+    <string name="de">De:</string>
+    <string name="conversor_de_temperatura">Conversor de Temperatura</string>
+    <string name="para">Para:</string>
+    <string name="celsius">Celsius</string>
+    <string name="fahrenheit">Fahrenheit</string>
+    <string name="kelvin">Kelvin</string>
+    <string name="aguardando_valor">Aguardando valor</string>
+    <string name="hist_rico">Histórico:</string>
 </resources>
