@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         val tipoDestino = findViewById<RadioGroup>(R.id.rgDestino)
         val Converter = findViewById<Button>(R.id.btnConverter)
         val Resultado = findViewById<TextView>(R.id.tvResultado)
+        val Limpar = findViewById<Button>(R.id.btnLimpar)
 
         Converter.setOnClickListener {
             val texto = removerVirgula(campoTemperatura.text.toString())
@@ -45,6 +46,12 @@ class MainActivity : AppCompatActivity() {
             Resultado.text = resultadoFormatado
 
             }
+
+        Limpar.setOnClickListener {
+            campoTemperatura.text.clear()
+            Resultado.text = "Aguardando valor..."
+            campoTemperatura.requestFocus()
+        }
 
 
     }
