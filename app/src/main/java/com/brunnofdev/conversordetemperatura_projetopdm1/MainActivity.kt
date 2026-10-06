@@ -5,6 +5,11 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import android.widget.Button
+import android.widget.EditText
+import android.widget.RadioButton
+import android.widget.RadioGroup
+import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,6 +21,32 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val campoTemperatura = findViewById<EditText>(R.id.edtTemperatura)
+        val tipoOrigem = findViewById<RadioGroup>(R.id.rgOrigem)
+        val tipoDestino = findViewById<RadioGroup>(R.id.rgDestino)
+        val Converter = findViewById<Button>(R.id.btnConverter)
+        val Resultado = findViewById<TextView>(R.id.tvResultado)
+
+        Converter.setOnClickListener {
+            val texto = removerVirgula(campoTemperatura.text.toString())
+            val valor = texto.toDoubleOrNull() ?: 0.0
+
+            val idOrigem = tipoOrigem.checkedRadioButtonId
+            val idDestino = tipoDestino.checkedRadioButtonId
+
+            val origem = findViewById<RadioButton>(idOrigem)?.text.toString()
+            val destino = findViewById<RadioButton>(idDestino)?.text.toString()
+
+            val resultado = converterTemperatura(valor, origem, destino)
+
+            val resultadoArredondado = String.format("%.2f", resultado)
+            val resultadoFormatado = "$valor $origem = $resultadoArredondado $destino"
+            Resultado.text = resultadoFormatado
+
+            }
+
+
     }
 
     fun removerVirgula(texto: String): String = texto.replace(",", ".")
