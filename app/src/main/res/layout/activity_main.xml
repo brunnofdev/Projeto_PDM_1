@@ -32,6 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:autofillHints="25"
+            android:background="@color/white"
             android:hint="@string/digite_a_temperatura"
             android:textColorHint="@color/black"
             android:inputType="numberDecimal"
@@ -90,14 +91,14 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:gravity="center"
-            android:layout_marginBottom="20dp"/>
+            android:layout_marginBottom="40dp"/>
 
         <TextView
             android:id="@+id/tvHistorico"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/hist_rico"
-            android:background="#EEEEEE"
+            android:text="@string/historico"
+            android:background="@color/white"
             android:padding="10dp"/>
 
     </LinearLayout>
