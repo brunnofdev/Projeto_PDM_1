@@ -73,14 +73,31 @@
             <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/black" android:text="@string/kelvin"/>
         </RadioGroup>
 
-        <Button
-            android:id="@+id/btnConverter"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/converter"
-            android:textColor="@color/white"
-            android:layout_marginBottom="20dp"
-            android:backgroundTint="@color/main"/>
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
+
+            <Button
+                android:id="@+id/btnLimpar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/limpar"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/main"
+                android:layout_marginEnd="10dp"/>
+
+            <Button
+                android:id="@+id/btnConverter"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/converter"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/main"/>
+        </LinearLayout>
 
         <TextView
             android:id="@+id/tvResultado"
@@ -88,8 +105,8 @@
             android:layout_height="wrap_content"
             android:text="@string/aguardando_valor"
             android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
+            android:background="@color/white"
+            android:textSize="20sp"
             android:gravity="center"
             android:layout_marginBottom="40dp"/>
 

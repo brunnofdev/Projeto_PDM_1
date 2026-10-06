@@ -10,4 +10,5 @@
     <string name="kelvin">Kelvin</string>
     <string name="aguardando_valor">Aguardando valor</string>
     <string name="historico">Histórico:</string>
+    <string name="limpar">Limpar</string>
 </resources>
