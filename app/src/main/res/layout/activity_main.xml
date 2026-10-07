@@ -35,7 +35,7 @@
             android:background="@color/white"
             android:hint="@string/digite_a_temperatura"
             android:textColorHint="@color/black"
-            android:inputType="numberDecimal"
+            android:inputType="numberDecimal|numberSigned"
             android:textColor="@color/black"
             android:minHeight="48dp" />
 
