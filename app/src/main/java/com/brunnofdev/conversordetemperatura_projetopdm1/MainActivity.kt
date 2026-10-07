@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
 
                 listaHistorico.add(0, resultadoFormatado)
                 if (listaHistorico.size > 5) {
-                    listaHistorico.removeAt(0)
+                    listaHistorico.removeAt(5)
                 }
                 Historico.text = "Histórico:\n" + listaHistorico.joinToString("\n")
 
