@@ -30,22 +30,23 @@ class MainActivity : AppCompatActivity() {
         val Limpar = findViewById<Button>(R.id.btnLimpar)
 
         Converter.setOnClickListener {
+
             val texto = removerVirgula(campoTemperatura.text.toString())
             val valor = texto.toDoubleOrNull() ?: 0.0
-
             val idOrigem = tipoOrigem.checkedRadioButtonId
             val idDestino = tipoDestino.checkedRadioButtonId
+            val origem = findViewById<RadioButton>(idOrigem)?.text?.toString() ?: ""
+            val destino = findViewById<RadioButton>(idDestino)?.text?.toString() ?: ""
 
-            val origem = findViewById<RadioButton>(idOrigem)?.text.toString()
-            val destino = findViewById<RadioButton>(idDestino)?.text.toString()
+            if(texto.isNotEmpty() && origem.isNotEmpty() && destino.isNotEmpty()) {
 
-            val resultado = converterTemperatura(valor, origem, destino)
-
-            val resultadoArredondado = String.format("%.2f", resultado)
-            val resultadoFormatado = "$valor $origem = $resultadoArredondado $destino"
-            Resultado.text = resultadoFormatado
+                val resultado = converterTemperatura(valor, origem, destino)
+                val resultadoArredondado = String.format("%.2f", resultado)
+                val resultadoFormatado = "$valor $origem = $resultadoArredondado $destino"
+                Resultado.text = resultadoFormatado
 
             }
+        }
 
         Limpar.setOnClickListener {
             campoTemperatura.text.clear()
