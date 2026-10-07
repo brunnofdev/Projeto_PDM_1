@@ -12,6 +12,9 @@ import android.widget.RadioGroup
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
+
+    val listaHistorico = mutableListOf<String>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -28,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         val Converter = findViewById<Button>(R.id.btnConverter)
         val Resultado = findViewById<TextView>(R.id.tvResultado)
         val Limpar = findViewById<Button>(R.id.btnLimpar)
+        val Historico = findViewById<TextView>(R.id.tvHistorico)
 
         Converter.setOnClickListener {
 
@@ -44,6 +48,12 @@ class MainActivity : AppCompatActivity() {
                 val resultadoArredondado = String.format("%.2f", resultado)
                 val resultadoFormatado = "$valor $origem = $resultadoArredondado $destino"
                 Resultado.text = resultadoFormatado
+
+                listaHistorico.add(0, resultadoFormatado)
+                if (listaHistorico.size > 5) {
+                    listaHistorico.removeAt(0)
+                }
+                Historico.text = "Histórico:\n" + listaHistorico.joinToString("\n")
 
             }
         }
